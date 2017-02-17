@@ -1,7 +1,8 @@
-//Version
+package piggymcpigface;
+
 import java.util.Scanner;
 
-class PiggyMcPigface {
+public class PiggyMcPigface {
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
     System.out.println("Write a word that you want to translate:");

@@ -181,3 +181,6 @@ TSWLatexianTemp*
 
 # Do not include Java class
 *.class
+
+# Do not include Product.jar
+Product.jar
