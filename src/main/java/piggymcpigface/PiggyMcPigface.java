@@ -4,13 +4,36 @@ import java.util.Scanner;
 
 public class PiggyMcPigface {
   public static void main(String[] args){
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Write a sentence that you want to translate:");
+    Scanner scan = new Scanner(System.in).useDelimiter("\\n");
+    System.out.println("Type -r for reading from an input file, -s for translating a sentence");
+    String inputCommand = scan.next();
+    String translatedSentence = "";
+    boolean translationComplete = false;
 
-    String inputSentence = scan.nextLine();
+    if(inputCommand.equals("-r")){
+      System.out.println("Not yet implemented");
+    }
+    else if(inputCommand.equals("-s")){
+      System.out.println("Write your sentence in the command line");
+      String inputSentence = scan.next();
+      translatedSentence = translateSentence(inputSentence);
+      translationComplete = true;
+      System.out.println("The sentence in pig latin is: " + translatedSentence);
+    }
+    else {
+      System.out.println("Unknown Command");
+    }
 
-    String translatedSentence = translateSentence(inputSentence);
-    System.out.println("The sentence in pig latin is: " + translatedSentence);
+    if(translationComplete){
+      System.out.println("Type -w followed by a filename if you want to store the data, otherwise type quit");
+      String storeCommand = scan.next();
+      if(storeCommand.equals("-w")){
+         System.out.println("Not yet implemented");
+      }
+    }
+
+    System.out.println("Goodbye!");
+
   }
 
   public static String translateSentence(String inputSentence){
