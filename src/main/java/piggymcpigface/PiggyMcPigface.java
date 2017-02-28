@@ -26,6 +26,7 @@ public class PiggyMcPigface {
   }
 
   public static String translateWord(String inputWord){
+    // inputWord = inputWord.toLowerCase();
     String pigLatin = "";
     int wordLength = inputWord.length();
     int vowelIdx = indexOfFirstVowel(inputWord);
@@ -35,7 +36,20 @@ public class PiggyMcPigface {
     else if(vowelIdx > 0){
       pigLatin = inputWord.substring(vowelIdx,wordLength)  + inputWord.substring(0,vowelIdx) + "ay";
     }
+    pigLatin = handleUppercase(inputWord, pigLatin);
     return pigLatin;
+  }
+
+  public static String handleUppercase(String inputWord, String translatedWord){
+    String handledWord = translatedWord.toLowerCase();
+    if (isFirstLetterUppercase(inputWord)){
+      handledWord = translatedWord.substring(0,1).toUpperCase() + translatedWord.substring(1).toLowerCase();
+    }
+    return handledWord;
+  }
+
+  private static boolean isFirstLetterUppercase(String inputWord){
+    return Character.isUpperCase(inputWord.charAt(0));
   }
 
   public static int indexOfFirstVowel(String word){

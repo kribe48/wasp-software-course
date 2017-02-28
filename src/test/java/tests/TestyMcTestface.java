@@ -14,6 +14,11 @@ public class TestyMcTestface {
   };
 
   @Test
+  public void handleCapitalLetter() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("Ananabay", piggyMcPigface.translateWord("Banana"));
+  };
+  @Test
   public void translateWordBeginningWithConsonant() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("ananabay", piggyMcPigface.translateWord("banana"));
