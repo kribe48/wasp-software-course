@@ -8,6 +8,12 @@ import piggymcpigface.*;
 
 public class TestyMcTestface {
   @Test
+  public void translateSentence() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("uckday ilesmay eggway", piggyMcPigface.translateWord("duck smile egg"));
+  };
+
+  @Test
   public void translateWordBeginningWithConsonant() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("ananabay", piggyMcPigface.translateWord("banana"));
