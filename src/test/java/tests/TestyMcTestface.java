@@ -10,7 +10,7 @@ public class TestyMcTestface {
   @Test
   public void translateSentence() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("uckday ilesmay eggway", piggyMcPigface.translateWord("duck smile egg"));
+    assertEquals("uckday ilesmay eggway", piggyMcPigface.translateSentence("duck smile egg"));
   };
 
   @Test

@@ -7,17 +7,24 @@ public class PiggyMcPigface {
     Scanner scan = new Scanner(System.in);
     System.out.println("Write a sentence that you want to translate:");
 
-    String inputSentence = scan.next();
+    String inputSentence = scan.nextLine();
 
-    String translatedWord = translateWord(inputSentence);
-    System.out.println("The word in pig latin is: " + translatedWord);
+    String translatedSentence = translateSentence(inputSentence);
+    System.out.println("The sentence in pig latin is: " + translatedSentence);
   }
-
 
   public static String translateSentence(String inputSentence){
-    return "";
+    String translatedSentence = "";
+    String[] inputWords = inputSentence.split("\\s+");
+    System.out.println(inputWords.length);
+    for (String inputWord: inputWords) {
+      if (translatedSentence.length() != 0) {
+          translatedSentence = translatedSentence + " ";
+      }
+      translatedSentence = translatedSentence + translateWord(inputWord);
+    }
+    return translatedSentence;
   }
-
 
   public static String translateWord(String inputWord){
     String pigLatin = "";
