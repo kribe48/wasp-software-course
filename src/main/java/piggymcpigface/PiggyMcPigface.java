@@ -36,6 +36,6 @@ public class PiggyMcPigface {
     }
     // handle cases where a vowel is not found
     return -1;
-}
+  }
 
 }
