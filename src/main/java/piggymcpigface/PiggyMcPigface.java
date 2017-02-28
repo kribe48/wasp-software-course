@@ -16,7 +16,6 @@ public class PiggyMcPigface {
   public static String translateSentence(String inputSentence){
     String translatedSentence = "";
     String[] inputWords = inputSentence.split("\\s+");
-    System.out.println(inputWords.length);
     for (String inputWord: inputWords) {
       if (translatedSentence.length() != 0) {
           translatedSentence = translatedSentence + " ";
