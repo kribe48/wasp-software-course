@@ -37,6 +37,7 @@ public class PiggyMcPigface {
       pigLatin = inputWord.substring(vowelIdx,wordLength)  + inputWord.substring(0,vowelIdx) + "ay";
     }
     pigLatin = handleUppercase(inputWord, pigLatin);
+    pigLatin = handlePunctuation(pigLatin);
     return pigLatin;
   }
 
@@ -46,6 +47,26 @@ public class PiggyMcPigface {
       handledWord = translatedWord.substring(0,1).toUpperCase() + translatedWord.substring(1).toLowerCase();
     }
     return handledWord;
+  }
+
+  public static String handlePunctuation(String inputWord){
+    String outputWord = inputWord;
+    int punctuationIdx = indexOfPunctutation(inputWord);
+    if (punctuationIdx > -1){
+      outputWord = inputWord.substring(0,punctuationIdx) + inputWord.substring(punctuationIdx+1) + inputWord.substring(punctuationIdx,punctuationIdx+1);
+    }
+    return outputWord;
+  }
+
+  private static int indexOfPunctutation(String inputWord){
+    String punctuations = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    for (int index = 0; index < inputWord.length(); index++){
+        if (punctuations.contains(String.valueOf(inputWord.charAt(index)))){
+            return index;
+        }
+    }
+    // handle cases where a punctuation is not found
+    return -1;
   }
 
   private static boolean isFirstLetterUppercase(String inputWord){

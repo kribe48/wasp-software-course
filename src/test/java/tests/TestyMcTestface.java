@@ -19,6 +19,13 @@ public class TestyMcTestface {
     assertEquals("Ananabay", piggyMcPigface.translateWord("Banana"));
   };
   @Test
+  public void handlePunctuation() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("banana!", piggyMcPigface.handlePunctuation("ban!ana"));
+    assertEquals("banana.", piggyMcPigface.handlePunctuation(".banana"));
+    assertEquals("banana?", piggyMcPigface.handlePunctuation("banana?"));
+  };
+  @Test
   public void translateWordBeginningWithConsonant() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("ananabay", piggyMcPigface.translateWord("banana"));
