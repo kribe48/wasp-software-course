@@ -13,7 +13,9 @@ public class PiggyMcPigface {
   }
 
   public static String translateWord(String inputWord){
-
     return "ashtray";
+  }
+  public static int indexOfFirstVowel(String inputWord){
+    return -1;
   }
 }
