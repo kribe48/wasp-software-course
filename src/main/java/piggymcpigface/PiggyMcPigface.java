@@ -5,12 +5,19 @@ import java.util.Scanner;
 public class PiggyMcPigface {
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
-    System.out.println("Write a word that you want to translate:");
+    System.out.println("Write a sentence that you want to translate:");
 
-    String inputWord = scan.next();
-    String translatedWord = translateWord(inputWord);
+    String inputSentence = scan.next();
+
+    String translatedWord = translateWord(inputSentence);
     System.out.println("The word in pig latin is: " + translatedWord);
   }
+
+
+  public static String translateSentence(String inputSentence){
+    return "";
+  }
+
 
   public static String translateWord(String inputWord){
     String pigLatin = "";
