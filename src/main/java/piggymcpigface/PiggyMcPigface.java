@@ -23,19 +23,7 @@ public class PiggyMcPigface {
     else {
       System.out.println("Unknown Command");
     }
-//    switch(inputCommand) {
-//      case "-r":  System.out.println("Not yet implemented");
-//                  break;
-//      case "-s":  System.out.println("Write your sentence in the command line");
-//                  String inputSentence = scan.nextLine();
-//                  translatedSentence = translateSentence(inputSentence);
-//                  translationComplete = true;
-//                  System.out.println("The sentence in pig latin is: " + translatedSentence);
-//                  break;
-//    default:      System.out.println("Unknown Command");
-//                  break;
 
-//    }
     if(translationComplete){
       System.out.println("Type -w followed by a filename if you want to store the data, otherwise type quit");
       String storeCommand = scan.next();
