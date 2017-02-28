@@ -24,10 +24,10 @@ public class PiggyMcPigface {
     int wordLength = inputWord.length();
     int vowelIdx = indexOfFirstVowel(inputWord);
     if (vowelIdx == 0){
-      pigLatin = inputWord.substring(1,wordLength-1) + inputWord.substring(0,0) + "way";
+      pigLatin = inputWord + "way";
     }
     else if(vowelIdx > 0){
-      pigLatin = inputWord.substring(vowelIdx,wordLength-1)  + inputWord.substring(0,vowelIdx) + "ay";
+      pigLatin = inputWord.substring(vowelIdx,wordLength)  + inputWord.substring(0,vowelIdx) + "ay";
     }
     return pigLatin;
   }
