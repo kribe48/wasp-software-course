@@ -1,6 +1,6 @@
 # wasp-software-course
 Code for Assignment 2 in the WASP software engineering and cloud computing course.
-
+Kristoffer Bergman and Per Boström
 
 # wasp-software-course
 
