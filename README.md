@@ -15,6 +15,11 @@ This repository contains code for Assignment 2 in the WASP software engineering 
 #Installation
 To run this project, you need to have Java and Ant installed.
 
+#Installation on Mac
+Do
+ * ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` to install homebrew package manager
+ * ```brew install ant``` to install ant
+
 #Build
 Do
   *  ```ant``` to compile
