@@ -12,19 +12,19 @@ This repository contains code for Assignment 2 in the WASP software engineering 
   *  We don't use any dependencies to download libraries. Instead, all dependent libraries are in included in the project in the ```lib``` folder.
 
 
-#Installation
+# Installation
 To run this project, you need to have Java and Ant installed.
 Do
   * ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` to install homebrew package manager
   * ```brew install ant``` to install ant
 
-#Build
+# Build
 Do
   *  ```ant``` to compile
   *  ```ant test``` to additionally run all tests
   *  ```ant jar``` to generate a Product.jar file
   *  ```ant clean``` to clean away generated files.
 
-#Run
+# Run
 Run the generated jar file by:
   *  ```java -jar Product.jar```
