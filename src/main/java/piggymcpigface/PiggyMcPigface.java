@@ -1,5 +1,3 @@
-// testing shervin
-
 package piggymcpigface;
 
 import java.util.Scanner;
