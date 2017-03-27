@@ -18,7 +18,6 @@ public class TestyMcTestface {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("hohäror kokomommomeror popipoppopi lolånongogsostotrorumompop", piggyMcPigface.translateSentence("här kommer pippi långstrump", "rovarSpraket"));
   };
-
   @Test
   public void handleCapitalLetterPigLatin() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();

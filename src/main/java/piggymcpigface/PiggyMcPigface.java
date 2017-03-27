@@ -18,8 +18,34 @@ public class PiggyMcPigface {
     boolean translationComplete = false;
 
     if(inputCommand.equals("-r")){
-      System.out.println("Not yet implemented");
-    }
+      String filename = "yourfile.txt";
+
+      try{
+      FileReader inputFile = new FileReader(filename);
+
+      //Instantiate the BufferedReader Class
+      BufferedReader bufferReader = new BufferedReader(inputFile);
+
+      //Variable to hold the one line data
+      String line;
+
+      // Read file line by line and print on the console
+      while ((line = bufferReader.readLine()) != null)   {
+        //System.out.println(line);
+        String inputSentence = line;
+        translatedSentence = translateSentence(inputSentence);
+        translationComplete = true;
+        System.out.println("The sentence in pig latin is: " + translatedSentence);
+      }
+      //Close the buffer reader
+      bufferReader.close();
+      //System.out.println("Not yet implemented");
+          }
+      catch(Exception e){
+          System.out.println("Error while reading file line by line:" + e.getMessage());
+                        }
+
+     }
     else if(inputCommand.equals("-s")){
       System.out.println("Write your sentence in the command line");
       String inputSentence = scan.next();
