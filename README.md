@@ -1,6 +1,6 @@
 # wasp-software-course
 Code for Assignment 2 in the WASP software engineering and cloud computing course.
-Kristoffer Bergman and Per Boström
+Kristoffer Bergman, Per Boström and Shervin Parvini
 
 # wasp-software-course
 
@@ -18,7 +18,7 @@ Do
   * ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` to install homebrew package manager
   * ```brew install ant``` to install ant
 
-# Build
+# Build [![Build Status](https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master)](https://travis-ci.org/kribe48/wasp-software-course)
 Do
   *  ```ant``` to compile
   *  ```ant test``` to additionally run all tests

@@ -22,10 +22,7 @@ public class PiggyMcPigface {
       String translatedFile = translateFile(filename);
       translationComplete = true;
       System.out.println("The sentence in pig latin is: " + translatedFile);
-
-
-
-     }
+    }
     else if(inputCommand.equals("-s")){
       System.out.println("Write your sentence in the command line");
       String inputSentence = scan.next();
