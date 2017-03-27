@@ -18,9 +18,7 @@ Do
   * ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` to install homebrew package manager
   * ```brew install ant``` to install ant
 
-# Build
-https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master
-[![Build Status](https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master)](https://travis-ci.org/kribe48/wasp-software-course)
+# Build [![Build Status](https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master)](https://travis-ci.org/kribe48/wasp-software-course)
 Do
   *  ```ant``` to compile
   *  ```ant test``` to additionally run all tests
