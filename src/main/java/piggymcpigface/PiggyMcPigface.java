@@ -28,12 +28,11 @@ public class PiggyMcPigface {
 
       //Variable to hold the one line data
       String line;
+      String translatedLanguage = "pigLatin";
 
       // Read file line by line and print on the console
       while ((line = bufferReader.readLine()) != null)   {
-        //System.out.println(line);
-        String inputSentence = line;
-        translatedSentence = translateSentence(inputSentence);
+        translatedSentence = translateSentence(line, translatedLanguage);
         translationComplete = true;
         System.out.println("The sentence in pig latin is: " + translatedSentence);
       }
