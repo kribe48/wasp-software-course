@@ -19,31 +19,11 @@ public class PiggyMcPigface {
 
     if(inputCommand.equals("-r")){
       String filename = "yourfile.txt";
+      String translatedFile = translateFile(filename);
+      translationComplete = true;
+      System.out.println("The sentence in pig latin is: " + translatedFile);
 
-      try{
-      FileReader inputFile = new FileReader(filename);
 
-      //Instantiate the BufferedReader Class
-      BufferedReader bufferReader = new BufferedReader(inputFile);
-
-      //Variable to hold the one line data
-      String line;
-
-      // Read file line by line and print on the console
-      while ((line = bufferReader.readLine()) != null)   {
-        //System.out.println(line);
-        String inputSentence = line;
-        translatedSentence = translateSentence(inputSentence);
-        translationComplete = true;
-        System.out.println("The sentence in pig latin is: " + translatedSentence);
-      }
-      //Close the buffer reader
-      bufferReader.close();
-      //System.out.println("Not yet implemented");
-          }
-      catch(Exception e){
-          System.out.println("Error while reading file line by line:" + e.getMessage());
-                        }
 
      }
     else if(inputCommand.equals("-s")){
@@ -195,4 +175,32 @@ public class PiggyMcPigface {
 
   }
 
+  public static String translateFile(String inputtextfile) {
+  // translate the input text file.
+  String translatedFile = "";
+  try{
+  FileReader inputFile = new FileReader(inputtextfile);
+
+  //Instantiate the BufferedReader Class
+  BufferedReader bufferReader = new BufferedReader(inputFile);
+
+  //Variable to hold the one line data
+  String line;
+
+  // Read file line by line and print on the console
+  while ((line = bufferReader.readLine()) != null)   {
+    //System.out.println(line);
+    translatedFile = translatedFile + translateSentence(line,"pigLatin");
+
+  }
+  //Close the buffer reader
+  bufferReader.close();
+  //System.out.println("Not yet implemented");
+      }
+  catch(Exception e){
+      System.out.println("Error while reading file line by line:" + e.getMessage());
+                    }
+
+  return translatedFile;
+  }
 }
