@@ -20,6 +20,7 @@ Do
 
 # Build
 https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master
+[![Build Status](https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master)](https://travis-ci.org/kribe48/wasp-software-course)
 Do
   *  ```ant``` to compile
   *  ```ant test``` to additionally run all tests
