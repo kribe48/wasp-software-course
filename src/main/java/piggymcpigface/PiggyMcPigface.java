@@ -3,7 +3,13 @@ package piggymcpigface;
 
 import java.util.Scanner;
 
+import static java.nio.file.StandardOpenOption.*;
+import java.nio.file.*;
+import java.io.*;
+import java.io.IOException;
+
 public class PiggyMcPigface {
+
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in).useDelimiter("\\n");
     System.out.println("Type -r for reading from an input file, -s for translating a sentence");
@@ -26,10 +32,10 @@ public class PiggyMcPigface {
     }
 
     if(translationComplete){
-      System.out.println("Type -w followed by a filename if you want to store the data, otherwise type quit");
+      System.out.println("Type -w if you want to store the data, otherwise type quit");
       String storeCommand = scan.next();
       if(storeCommand.equals("-w")){
-         System.out.println("Not yet implemented");
+        writeToFile(translatedSentence);
       }
     }
 
@@ -108,6 +114,19 @@ public class PiggyMcPigface {
     }
     // handle cases where a vowel is not found
     return -1;
+  }
+
+  private static void writeToFile(String sentence) {
+    // Convert the string to a byte array.
+    byte data[] = sentence.getBytes();
+    Path p = Paths.get("./PigLatinOutput.txt");
+
+    try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(p, CREATE, APPEND))) {
+      out.write(data, 0, data.length);
+    } catch (IOException x) {
+      System.err.println(x);
+    }
+
   }
 
 }

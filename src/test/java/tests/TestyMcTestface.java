@@ -12,6 +12,12 @@ public class TestyMcTestface {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("uckday ilesmay eggway", piggyMcPigface.translateSentence("duck smile egg"));
   };
+  
+  @Test
+  public void SentenceWithPunctuation() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("pig att.", piggyMcPigface.SentenceWithPunctuation("igpay attway."));
+  };
 
   @Test
   public void handleCapitalLetter() {
@@ -60,6 +66,11 @@ public class TestyMcTestface {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals(6, piggyMcPigface.indexOfFirstVowel("vwllsta"));
   }
+  @Test
+  public void ReverseTranslator() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("igpay", piggyMcPigface.ReverseTranslator("pig"));
+  };
 
 // Example of failing test
 // @Test
