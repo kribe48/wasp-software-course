@@ -11,7 +11,7 @@ import java.io.IOException;
 public class PiggyMcPigface {
 
   public static void main(String[] args){
-    Scanner scan = new Scanner(System.in).useDelimiter("\\n");
+    Scanner scan = new Scanner(System.in).useDelimiter("[\r\n]+");
     System.out.println("Type -r for reading from an input file, -s for translating a sentence in PigLatin, or -o for translating a sentence in Rövarspråket ");
     String inputCommand = scan.next();
     String translatedSentence = "";
