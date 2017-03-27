@@ -10,6 +10,12 @@ public class TestyMcTestface {
   @Test
   public void translateSentencePigLatin() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("Iway amway away udentstay.", piggyMcPigface.translateFile("testfile.txt"));
+  };
+
+  @Test
+  public void testTranslateFile() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
     assertEquals("uckday ilesmay eggway", piggyMcPigface.translateSentence("duck smile egg", "pigLatin"));
   };
 

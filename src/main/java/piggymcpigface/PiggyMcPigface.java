@@ -18,10 +18,18 @@ public class PiggyMcPigface {
     boolean translationComplete = false;
 
     if(inputCommand.equals("-r")){
-      String filename = "yourfile.txt";
+      System.out.println("Write the name of the input file in the command line");
+      String filename = scan.next();
       String translatedFile = translateFile(filename);
-      translationComplete = true;
-      System.out.println("The sentence in pig latin is: " + translatedFile);
+      if(translatedFile.equals("error")){
+        translationComplete = false;
+      }
+      else
+      {
+        translationComplete = true;
+        System.out.println("The sentence in pig latin is: " + translatedFile);
+      }
+
     }
     else if(inputCommand.equals("-s")){
       System.out.println("Write your sentence in the command line");
@@ -196,6 +204,7 @@ public class PiggyMcPigface {
       }
   catch(Exception e){
       System.out.println("Error while reading file line by line:" + e.getMessage());
+      translatedFile = "error";
                     }
 
   return translatedFile;

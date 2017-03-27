@@ -184,3 +184,5 @@ TSWLatexianTemp*
 
 # Do not include Product.jar
 Product.jar
+
+PigLatinOutput.txt
