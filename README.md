@@ -1,6 +1,6 @@
 # wasp-software-course
 Code for Assignment 2 in the WASP software engineering and cloud computing course.
-Kristoffer Bergman and Per Boström
+Kristoffer Bergman, Per Boström and Shervin Parvini
 
 # wasp-software-course
 
@@ -19,6 +19,7 @@ Do
   * ```brew install ant``` to install ant
 
 # Build
+https://travis-ci.org/kribe48/wasp-software-course.svg?branch=master
 Do
   *  ```ant``` to compile
   *  ```ant test``` to additionally run all tests
