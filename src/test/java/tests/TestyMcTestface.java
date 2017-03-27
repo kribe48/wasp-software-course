@@ -8,18 +8,28 @@ import piggymcpigface.*;
 
 public class TestyMcTestface {
   @Test
-  public void translateSentence() {
+  public void translateSentencePigLatin() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("uckday ilesmay eggway", piggyMcPigface.translateSentence("duck smile egg"));
+    assertEquals("uckday ilesmay eggway", piggyMcPigface.translateSentence("duck smile egg", "pigLatin"));
   };
-
-
 
   @Test
-  public void handleCapitalLetter() {
+  public void translateWordRovarSpraket() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("Ananabay", piggyMcPigface.translateWord("Banana"));
+    assertEquals("hohäror kokomommomeror popipoppopi lolånongogsostotrorumompop", piggyMcPigface.translateSentence("här kommer pippi långstrump", "rovarSpraket"));
   };
+  @Test
+  public void handleCapitalLetterPigLatin() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("Ananabay", piggyMcPigface.translateWordPigLatin("Banana"));
+  };
+
+  @Test
+  public void handleCapitalLetterRovarSpraket() {
+    PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
+    assertEquals("Bobanonanon", piggyMcPigface.translateWordRovarSpraket("Banan"));
+  };
+
   @Test
   public void handlePunctuation() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
@@ -30,17 +40,17 @@ public class TestyMcTestface {
   @Test
   public void translateWordBeginningWithConsonant() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("ananabay", piggyMcPigface.translateWord("banana"));
+    assertEquals("ananabay", piggyMcPigface.translateWordPigLatin("banana"));
   };
   @Test
   public void translateWordBeginningWithMultipleConsonants() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("eerschay", piggyMcPigface.translateWord("cheers"));
+    assertEquals("eerschay", piggyMcPigface.translateWordPigLatin("cheers"));
   }
   @Test
   public void translateWordBeginningWithVowel() {
     PiggyMcPigface piggyMcPigface = new PiggyMcPigface();
-    assertEquals("omeletway", piggyMcPigface.translateWord("omelet"));
+    assertEquals("omeletway", piggyMcPigface.translateWordPigLatin("omelet"));
   }
   @Test
   public void findingFirstVowelNo() {

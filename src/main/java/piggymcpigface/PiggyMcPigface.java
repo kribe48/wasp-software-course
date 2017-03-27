@@ -12,7 +12,7 @@ public class PiggyMcPigface {
 
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in).useDelimiter("\\n");
-    System.out.println("Type -r for reading from an input file, -s for translating a sentence");
+    System.out.println("Type -r for reading from an input file, -s for translating a sentence in PigLatin, or -o for translating a sentence in Rövarspråket ");
     String inputCommand = scan.next();
     String translatedSentence = "";
     boolean translationComplete = false;
@@ -49,9 +49,19 @@ public class PiggyMcPigface {
     else if(inputCommand.equals("-s")){
       System.out.println("Write your sentence in the command line");
       String inputSentence = scan.next();
-      translatedSentence = translateSentence(inputSentence);
+      String translatedLanguage = "pigLatin";
+      translatedSentence = translateSentence(inputSentence, translatedLanguage);
       translationComplete = true;
       System.out.println("The sentence in pig latin is: " + translatedSentence);
+    }
+    else if(inputCommand.equals("-o")){
+      System.out.println("Write your sentence in the command line");
+      String inputSentence = scan.next();
+      String translatedLanguage = "rovarSpraket";
+      translatedSentence = translateSentence(inputSentence, translatedLanguage);
+      translationComplete = true;
+      System.out.println("The sentence in rövarspråket is: " + translatedSentence);
+
     }
     else {
       System.out.println("Unknown Command");
@@ -69,19 +79,29 @@ public class PiggyMcPigface {
 
   }
 
-  public static String translateSentence(String inputSentence){
+  public static String translateSentence(String inputSentence, String translatedLanguage){
     String translatedSentence = "";
     String[] inputWords = inputSentence.split("\\s+");
-    for (String inputWord: inputWords) {
-      if (translatedSentence.length() != 0) {
-          translatedSentence = translatedSentence + " ";
+    if(translatedLanguage.equals("pigLatin")){
+      for (String inputWord: inputWords) {
+        if (translatedSentence.length() != 0) {
+            translatedSentence = translatedSentence + " ";
+          }
+      translatedSentence = translatedSentence + translateWordPigLatin(inputWord);
       }
-      translatedSentence = translatedSentence + translateWord(inputWord);
+    }
+    else if(translatedLanguage.equals("rovarSpraket")){
+      for (String inputWord: inputWords) {
+        if (translatedSentence.length() != 0) {
+            translatedSentence = translatedSentence + " ";
+          }
+      translatedSentence = translatedSentence + translateWordRovarSpraket(inputWord);
+      }
     }
     return translatedSentence;
   }
 
-  public static String translateWord(String inputWord){
+  public static String translateWordPigLatin(String inputWord){
     // inputWord = inputWord.toLowerCase();
     String pigLatin = "";
     int wordLength = inputWord.length();
@@ -95,6 +115,25 @@ public class PiggyMcPigface {
     pigLatin = handleUppercase(inputWord, pigLatin);
     pigLatin = handlePunctuation(pigLatin);
     return pigLatin;
+  }
+
+  public static String translateWordRovarSpraket(String inputWord){
+    String rovarSpraket = "";
+    String nextSubString = "";
+    String loweredWord = inputWord.toLowerCase();
+    String consonants = "bcdfghjklmnpqrstvwxz";
+    int wordLength = inputWord.length();
+    for (int index = 0; index < wordLength ;index++ ) {
+      if (consonants.contains(String.valueOf(loweredWord.charAt(index)))){
+          nextSubString = inputWord.substring(index, index+1) + "o" + inputWord.substring(index, index+1);
+      }
+      else {
+        nextSubString = inputWord.substring(index, index+1);
+      }
+      rovarSpraket = rovarSpraket + nextSubString;
+    }
+    rovarSpraket = handleUppercase(inputWord, rovarSpraket);
+    return rovarSpraket;
   }
 
   public static String handleUppercase(String inputWord, String translatedWord){
@@ -141,6 +180,7 @@ public class PiggyMcPigface {
     // handle cases where a vowel is not found
     return -1;
   }
+
 
   private static void writeToFile(String sentence) {
     // Convert the string to a byte array.
