@@ -106,7 +106,6 @@ public class PiggyMcPigface {
       rovarSpraket = rovarSpraket + nextSubString;
     }
     rovarSpraket = handleUppercase(inputWord, rovarSpraket);
-    rovarSpraket = handlePunctuation(rovarSpraket);
     return rovarSpraket;
   }
 
