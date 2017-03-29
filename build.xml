@@ -6,7 +6,7 @@
 
 	<target name="build">
 		<mkdir dir="ant-bin" />
-		<javac srcdir="src/main/java:src/test/java" destdir="ant-bin" includeantruntime="false" classpath="${cp.lib}" />
+		<javac srcdir="src/main/java:src/test/java" destdir="ant-bin" includeantruntime="false" classpath="${cp.lib}" encoding="UTF-8"/>
 	</target>
 
 	<target name="test" depends="build">
